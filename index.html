@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <center><link rel="stylesheet" href="style.css" />
+    <img src="logo.png" alt="Logo" class="logo">
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Please login to continue</p>
+
+            <form>
+            <div class="input-group">
+            <br /><input type="email" placeholder="Enter your email" required>
+                </div>
+
+                <br /><div class="input-group">
+                <input type="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+    <script>
+    document.getElementById('loginBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const messageDiv = document.getElementById('message');
+        if (!email || !password) {
+            messageDiv.textContent = 'Please fill in both fields.';
+            return;
+        }
+        if(email == 'test@example.com' && password == 'password123') {
+            window.location.href = 'dashboard.html';
+        } else {
+            messageDiv.textContent = 'Invalid email or password.';
+        }
+    });
+</script>
+
+               <br /> <br /> <a href="reset.html">Don't have an account</a>
+                </center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
